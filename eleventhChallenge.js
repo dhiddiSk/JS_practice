@@ -11,9 +11,9 @@ Your tasks:
 	Odd of victory Borrussia Dortmund: 6.5
    Get the team names directly from the game object, don't hardcode them (except for "draw").
    Hint: Note how the odds and the game objects have the same property names.
-4. Bonus: Create an object called 'scorers' which contains the names of the
 
-players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+4. Bonus: Create an object called 'scorers' which contains the names of the players who scored as properties, and the
+number of goals as the value. In this game, it will look like this:
 {
  Gnarby: 1,
  Hummels: 1,
@@ -67,4 +67,21 @@ const game = {
  	console.log(oddsAverage/oddsLenghtCount.length);
  }
  calculateAverageOdd();
+ 
+ console.log(game.odds.team1);
+  
+ // Initializing the new object.
+ let newObject = {};
+ const createNewObject = function(scoreObject){
+ 	for(const item of scoreObject){
+ 		let keysArray = Object.keys(newObject);
+ 		if(keysArray.includes(item)){
+ 			newObject[item] = 2;
+ 		}
+ 		newObject[item] = 1;
+ 	}
+ }
+ 
+ createNewObject(game.scored);
+ console.log(newObject);
 
